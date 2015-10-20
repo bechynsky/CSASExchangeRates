@@ -1,7 +1,7 @@
-import urllib2
+﻿import urllib2
 import json
 import ConfigParser
-#from sense_hat import SenseHat
+from sense_hat import SenseHat
 
 # file structure
 # [CSAS]
@@ -27,9 +27,9 @@ content = resp.read()
 rates = json.loads(content)
 
 # print rates
-#sense = SenseHat()
+sense = SenseHat()
 
 for rate in rates:
     message = "{0}: {1} {2}".format(rate['shortName'], rate['currBuy'], rate['currSell'])
     print message
-    #sense.show_message(message)
+    sense.show_message(message)
